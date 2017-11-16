@@ -2,7 +2,7 @@
 
 Vid orderläggning i API kan kommunikationsoperatören svara med state `RECEIVED`. Det betyder att tjänsteleverantören skall fråga regelbundet om ordern status.
 
-Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Tjänsteleverantören kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina tjänster aktiverade snabbare.
+Order Event API erbjuder möjlighet att fråga om alla nya Order Event sedan senaste anrop. Så att Tjänsteleverantören kan ställa en fråga för status på alla utestående ordrar. På det viset kan intervallet mellan statushämtningar minskas och kunden får sina transmissionsprodukter aktiverade snabbare.
 
 API:et används enbart då en orderläggning resulterar i state `RECEIVED`.
 

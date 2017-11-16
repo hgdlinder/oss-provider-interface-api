@@ -1,6 +1,6 @@
-# API: Alla aktiva tjänster
+# API: Alla aktiva transmissionsprodukter
 
-Syftet med API är att låta TL hämta en förteckning över alla sina aktiva tjänster från KO.
+Syftet med API är att låta TL hämta en förteckning över alla sina aktiva transmissionsprodukter från KO.
 
 ## Exempel
 
@@ -18,4 +18,3 @@ Content-Type: application/x-ldjson
 { "service": "IPTV", "accessId": "STTA0001", "spReference": "WloKMvmArcCFiV679uhWpAAtNgyvHxma" }
 
 ```
-

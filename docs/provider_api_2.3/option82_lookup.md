@@ -2,7 +2,7 @@
 
 För att stöda utrustningsbaserad autoaktivering behöver Tjänsteleverantör kunna slå upp vilken Access ett Option82-värde avser.
 
-Tjänsteleverantör samlar in DHCP-loggar med MAC-adress och Option82 (port). På så vis kan TL avgöra vilken port en kund är inkopplad i. För att kunna fortsätta aktiveringsprocessen och beställa tjänster på rätt port (via Access) behöver TL kunna avgöra vilket AccessId som hör till en given port.
+Tjänsteleverantör samlar in DHCP-loggar med MAC-adress och Option82 (port). På så vis kan TL avgöra vilken port en kund är inkopplad i. För att kunna fortsätta aktiveringsprocessen och beställa transmissionsprodukter på rätt port (via Access) behöver TL kunna avgöra vilket AccessId som hör till en given port.
 
 Beroende på hur stadsnätet förmedlar loggar till Tjänsteleverantör kommer TL att skicka anrop med olika suboptions.
 

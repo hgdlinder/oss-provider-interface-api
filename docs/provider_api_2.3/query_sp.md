@@ -1,4 +1,4 @@
-# TL API: Sökning efter beställda tjänster
+# TL API: Sökning efter beställda transmissionsprodukter
 
 Syftet med API är att låta KO hämta kundinformation om en access från Tjänsteleverantör.
 
@@ -21,5 +21,4 @@ Content-Type: application/x-ldjson
 
 ```
 
-APIt erbjuder Kommunikationsoperatör att söka på beställda tjänster hos Tjänsteleverantör.
-
+APIt erbjuder Kommunikationsoperatör att söka på beställda transmissionsprodukter hos Tjänsteleverantör.

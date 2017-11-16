@@ -88,8 +88,8 @@ Content-Type: application/json
                 <code>service</code>
             </td>
             <td>
-                Anger teknisk tjänst som skall aktiveras/avaktiveras på accessen. <br>
-                Värden för tekniska tjänster är KO-specifika och erhålls genom Feasibility-APIt. <em>text, obligatoriskt</em>
+                Anger transmissionsprodukt som skall aktiveras/avaktiveras på accessen. <br>
+                Värden för transmissionsprodukter är KO-specifika och erhålls genom Feasibility-APIt. <em>text, obligatoriskt</em>
             </td>
         </tr>
         <tr>
@@ -97,7 +97,7 @@ Content-Type: application/json
                 <code>operation</code>
             </td>
             <td>
-               Anger om tjänsten skall aktiveras eller avaktiveras.<br>
+               Anger om transmissionsprodukten skall aktiveras eller avaktiveras.<br>
                Giltiga värden: "ACTIVATE", "DEACTIVATE". <em>text, obligatoriskt</em>
             </td>
         </tr>
@@ -106,7 +106,7 @@ Content-Type: application/json
                 <code>forcedTakeover</code>
             </td>
             <td>
-                Anger om anropande TLs beställning skall ersätta annan Service Providers aktiva tjänster. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall tjänsten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
+                Anger om anropande TLs beställning skall ersätta annan Service Providers aktiva transmissionsprodukter. Det behöver enbart fungera om Feasibility indikerat att funktionen skall fungera. Det gäller enbart för ACTIVATE-ordrar. Skall inte skickas vid DEACTIVATE. <br>Stöd för forcedTakeover är inte obligatoriskt, men i de fall det inte stöds skall transmissionsprodukten ändå kunna ta emot en fullständig beställning med "forcedTakeover: false".
                 <em>boolean (true/false), obligatoriskt för ACTIVATE</em>
             </td>
         </tr>
@@ -115,11 +115,11 @@ Content-Type: application/json
                 <code>equipment</code>
             </td>
             <td>
-                Equipment innehåller en lista över den utrustning som kan användas för att avgöra vilken tjänst/KO en tjänst tillhör hos kunden.<br>
+                Equipment innehåller en lista över den utrustning som kan användas för att avgöra vilken transmissionsprodukt/KO en transmissionsprodukt tillhör hos kunden.<br>
                 <br>
                 Ett use-case är vid Single-Play-Telefoni, där en TL använder en trådlös router för enbart Telefoni. Då behöver KO kunna avgöra att VendorId CH_BROADBAND skall användas för Telefoni istället för bredband.<br>
                 <br>
-                Listan är per tjänst, och den fullständiga listan skall alltid skickas vid varje aktivering.<br>
+                Listan är per transmissionsprodukt, och den fullständiga listan skall alltid skickas vid varje aktivering.<br>
                 <br>
                 Vid avaktivering skall listan av equipment rensas.<br>
                 <br>
@@ -141,7 +141,7 @@ Content-Type: application/json
                 <code>spReference</code>
             </td>
             <td>
-                `spReference` anger TLs referens på tjänsten. Används av TL för korrelering.<br>
+                `spReference` anger TLs referens på transmissionsprodukten. Används av TL för korrelering.<br>
                 <em>Sträng, max 255 tecken</em>
             </td>
         </tr>
@@ -186,7 +186,7 @@ Content-Type: application/json
 { "cause": "Unknown service: 'INTERNET_FLUGA'" }
 ```
 
-Om en annan tjänst med samma tjänstetyp redan är aktiv.
+Om en annan transmissionsprodukt med samma transmissionsprodukttyp redan är aktiv.
 Exempel: Bredband 100/100 är aktivt vid beställning av Bredband 10/10.:
 
 ```http
@@ -196,7 +196,7 @@ Content-Type: application/json
 { "cause": "Another Service of ServiceType 'Broadband' is already active." }
 ```
 
-Om tjänsten redan har en aktiv order:
+Om transmissionsprodukten redan har en aktiv order:
 
 ```http
 HTTP/1.1 200 OK
@@ -212,7 +212,7 @@ Content-Type: application/json
 }
 ```
 
-Om tjänsten redan är aktiv vid `ACTIVATE`, eller inaktiv vid `DEACTIVATE`:
+Om transmissionsprodukten redan är aktiv vid `ACTIVATE`, eller inaktiv vid `DEACTIVATE`:
 
 ```http
 HTTP/1.1 200 OK
@@ -227,7 +227,7 @@ Content-Type: application/json
 }
 ```
 
-Om tjänsten (tjänstetypen) inte går att beställa för att den är tagen av en annan Service Provider:
+Om transmissionsprodukten (transmissionsproduktetypen) inte går att beställa för att den är tagen av en annan Service Provider:
 
 ```http
 HTTP/1.1 400 Bad Request
@@ -280,7 +280,7 @@ Content-Type: application/json
                 <code>state</code>
             </td>
             <td>
-               Anger orderns status. Statusen är "RECEIVED" tills tjänsten är aktiverad eller har misslyckats. När ordern lyckas skall state bli "DONE_SUCCESS". När ordern misslyckas skall state uppdateras till "DONE_FAILED". Ordern får sedan aldrig ändra state.<br>
+               Anger orderns status. Statusen är "RECEIVED" tills transmissionsprodukten är aktiverad eller har misslyckats. När ordern lyckas skall state bli "DONE_SUCCESS". När ordern misslyckas skall state uppdateras till "DONE_FAILED". Ordern får sedan aldrig ändra state.<br>
                Giltiga värden: "RECEIVED", "DONE_SUCCESS", "DONE_FAILED". <em>text, obligatoriskt</em>
             </td>
         </tr>

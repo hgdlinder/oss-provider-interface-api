@@ -1,6 +1,6 @@
 # Feasibility API
 
-Feasibility API används av Tjänsteleverantör för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Tjänsteleverantör ser även vilken teknisk kapacitet varje access har genom de tekniska tjänster som är definierade på accessen.
+Feasibility API används av Tjänsteleverantör för att kunna hitta avlämningspunkter och svara på om en fastighet/lägenhet är inkopplad i ett nät. Tjänsteleverantör ser även vilken teknisk kapacitet varje access har genom de transmissionsprodukter som är definierade på accessen.
 
 ## Exempel
 
@@ -141,7 +141,7 @@ Content-Type: application/json
                 <code>mduApartmentNumber</code>
             </td>
             <td>
-								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa tjänster kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
+								Lägenhetsnummer enligt Lantmäteriet. Används för att tillsammans med en adress identifiera en unik access. I fallet när kund vill beställa transmissionsprodukter kan de inte aktiveras hos KO utan att TL har fastställt vilket AccessID kunden har. Genom att unikt identifiera lägenheten med mduApartmentNumber eller mduDistinguisher kan TL fastställa exakt vilken access som skall aktiveras. <em>text, 4 digits, obligatoriskt<sup>1</sup></em><br>
 								<br>
 								Exempel: 1101, 0901, 1201, 1213.<br>
 								<br>
@@ -181,7 +181,7 @@ Content-Type: application/json
                 <code>services</code>
             </td>
             <td>
-                Anger accessens tekniska tjänster och feasibility per teknisk tjänst. För beskrivning, se följande två rader i listan över fältbeskrivningar. <br/>
+                Anger accessens transmissionsprodukter och feasibility per transmissionsprodukt. För beskrivning, se följande två rader i listan över fältbeskrivningar. <br/>
                 Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
                 <em>obligatorisk</em>
             </td>
@@ -191,7 +191,7 @@ Content-Type: application/json
                 <code>services / service</code>
             </td>
             <td>
-                Id/namn på tekniskt tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
+                Id/namn på transmissionsprodukt som avses. Den transmissionsprodukten kan beställas via Service Activation API. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -199,8 +199,8 @@ Content-Type: application/json
                 <code>services / connection</code>
             </td>
             <td>
-                Anger när accessen kopplas in och den tekniska tjänsten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera tjänster på accessen. <br/>
-                Om tjänsten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
+                Anger när accessen kopplas in och transmissionsprodukten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera transmissionsprodukter på accessen. <br/>
+                Om transmissionsprodukten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
                 <br/>
                 <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
                 Exempel: YES, NO, 2012-07-01
@@ -247,7 +247,7 @@ Se [RFC-2616][rfc2616-sec14]. Exemplen använder ingen autentisering.
 If-Modified-Since = "If-Modified-Since" ":" HTTP-date
 ```
 
-När en access förekommer i ett svar skall den alltid skickas i sin helhet: med accessens samtliga fält och tjänster.
+När en access förekommer i ett svar skall den alltid skickas i sin helhet: med accessens samtliga fält och transmissionsprodukter.
 
 ## Begränsningsmekanism - Exempel
 

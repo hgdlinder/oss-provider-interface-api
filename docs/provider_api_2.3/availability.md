@@ -2,7 +2,7 @@
 
 Availability ger samma information som Feasibility-API, men enbart för en access.
 Dessutom svarar det med information som kan vara kostsammare att producera och av naturen behöver vara aktuell.
-Typiskt används frågan för att kunna svara kund om vilka tekniska tjänster som är lediga, med hänsyn taget till andra tjänsteleverantörer.
+Typiskt används frågan för att kunna svara kund om vilka transmissionsprodukter som är lediga, med hänsyn taget till andra tjänsteleverantörer.
 
 ### Exempel
 
@@ -96,7 +96,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services</code>
             </td>
             <td>
-                Anger accessens tjänster och feasibility per tjänst. Se fält per tjänst nedan. <br/>
+                Anger accessens transmissionsprodukter och feasibility per transmissionsprodukt. Se fält per transmissionsprodukt nedan. <br/>
                 Oavsett vilken Service Provider som hämtar feasibility-data skall services innehålla samma information.<br/>
                 <em>obligatorisk</em>
             </td>
@@ -106,7 +106,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / service</code>
             </td>
             <td>
-                Id/namn på teknisk tjänst som avses. Den tekniska tjänsten kan beställas via Service Activation API. <em>obligatorisk</em>
+                Id/namn på transmissionsprodukt som avses. Transmissionsprodukten kan beställas via Service Activation API. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -114,8 +114,8 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / connection</code>
             </td>
             <td>
-                Anger när accessen kopplas in och den tekniska tjänsten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera tjänster på accessen. <br/>
-                Om tjänsten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
+                Anger när accessen kopplas in och transmissionsprodukten blir aktiverbar första gången. På det angivna datumet, eller om connection är "YES", skall det gå att aktivera transmissionsprodukter på accessen. <br/>
+                Om transmissionsprodukten är aktiverbar men datumet är okänt kan "YES" användas för att indikera det. Datumet får tidigast vara 1970-01-01.<br/>
                 <br/>
                 <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
                 Exempel: YES, NO, 2012-07-01
@@ -126,11 +126,11 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>services / available</code>
             </td>
             <td>
-                Anger om/när teknisk tjänst är/blir tillgänglig för beställning och leverans.<br/>
-                Om tjänsten inte är tillgänglig för beställning av anropande TL skall det indikeras med "NO" eller datum då tjänsten blir tillgänglig.
+                Anger om/när transmissionsprodukt är/blir tillgänglig för beställning och leverans.<br/>
+                Om transmissionsprodukten inte är tillgänglig för beställning av anropande TL skall det indikeras med "NO" eller datum då transmissionsprodukten blir tillgänglig.
                 <br/> Datumet får tidigast vara 1970-01-01.<br/>
                 <br/>
-                Innan tjänsten är tillgänglig första gången sammanfaller Available och Connection.<br/>
+                Innan transmissionsprodukten är tillgänglig första gången sammanfaller Available och Connection.<br/>
                 <br/>
                 <em>"YES", "NO" eller ISO-8601 datum (YYYY-MM-DD), obligatoriskt</em><br/>
                 Exempel: YES, NO, 2012-07-01<br>
@@ -144,7 +144,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
             </td>
             <td>
                 Anger om flaggan "force" i en beställning kommer att ha effekt.<br>
-                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs tjänst istället för annan TLs tjänst. <br>
+                Alltså, är det möjligt att använda "force" (Forced Takeover) för att KO skall börja leverera anropande TLs transmissionsprodukt istället för annan TLs transmissionsprodukt. <br>
                 Om Forced Takeover inte stöds skall <b>false</b> returneras.<br>
                 <em>true eller false, obligatoriskt</em>
             </td>
@@ -154,7 +154,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active</code>
             </td>
             <td>
-                Lista över de tjänster som är aktiva på accessen för inloggad TL. <em>obligatorisk</em>
+                Lista över de transmissionsprodukter som är aktiva på accessen för inloggad TL. <em>obligatorisk</em>
             </td>
         </tr>
         <tr>
@@ -162,7 +162,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active / service</code>
             </td>
             <td>
-                Service-namn på den aktiva tjänsten. Skall finnas i "services"-listan. <em>text, obligatoriskt</em><br>
+                Service-namn på den aktiva transmissionsprodukten. Skall finnas i "services"-listan. <em>text, obligatoriskt</em><br>
                 <br>
                 Exempel: "BB-100-10"
             </td>
@@ -183,7 +183,7 @@ Listan omfattar de fält som Availability definererar _utöver_ <a href="feasibi
                 <code>active / equipment</code>
             </td>
             <td>
-                Lista av utrustning som tjänsteleverantör angett för tjänsten.<br>
+                Lista av utrustning som tjänsteleverantör angett för transmissionsprodukten.<br>
                 Se <a href="service_activation.md">Service Activation</a> för mer information.
             </td>
         </tr>

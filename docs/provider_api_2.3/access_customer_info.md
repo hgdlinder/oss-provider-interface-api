@@ -43,8 +43,8 @@ Content-Type: application/json
             </td>
             <td>
                 Service är key i root-objektet.<br>
-                Anger teknisk tjänst som skall vara aktiv på accessen. <br>
-                Värden för tekniska tjänster är KO-specifika och erhålls genom Feasibility-APIt. <em>text, obligatoriskt</em>
+                Anger teknisk transmissionsprodukt som skall vara aktiv på accessen. <br>
+                Värden för tekniska transmissionsprodukter är KO-specifika och erhålls genom Feasibility-APIt. <em>text, obligatoriskt</em>
             </td>
         </tr>
         <tr>
@@ -77,7 +77,7 @@ Content-Type: application/json
                 <code>spReference</code>
             </td>
             <td>
-                `spReference` anger TLs referens på tjänsten. Används av TL för korrelering.<br>
+                `spReference` anger TLs referens på transmissionsprodukten. Används av TL för korrelering.<br>
                 <em>Sträng, max 255 tecken</em>
             </td>
         </tr>

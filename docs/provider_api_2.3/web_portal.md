@@ -2,7 +2,7 @@
 
 Syftet med Web Portal API är att på ett säkert sätt kunna göra en överlämning av en kund från en kommunikationsoperatörs web-portal till en tjänsteleverantörs. I samband med en sådan överlämning så vill man skicka med data så som kundens access-id till tjänsteleverantören. Tanken är alltså att KO detekterar port (access) och sedan ger kunden en länk eller gör en HTTP redirect till TL-portal.
 
-Detta API specificerar inte vad tjänsteleverantörens portalsida skall användas till. Tänkbara användingsområden är aktivering, kontroll, eller köp av tjänster.
+Detta API specificerar inte vad tjänsteleverantörens portalsida skall användas till. Tänkbara användingsområden är aktivering, kontroll, eller köp av transmissionsprodukter.
 
 Detta API specificerar inte i vilket skede en KO gör överlämningen till tjänsteleverantörens portal. Man kan tänka sig scenarion där KO gör en automatisk HTTP redirect till TL baserad på t.ex. vendor-id (option 60) i DHCP eller att kunden måste klicka på en länk i KO:s portal.
 
@@ -40,7 +40,7 @@ En web portal URL skall ha följande format:
 			<code>mac</code>
 		</td>
 		<td>
-			MAC-adress för kundens utrustning. Detta kan vara användbart för TL för felsökning och aktivering av tjänster (t.ex. ATA-box i hemma-router levererad av TL).<br>
+			MAC-adress för kundens utrustning. Detta kan vara användbart för TL för felsökning och aktivering av transmissionsprodukter (t.ex. ATA-box i hemma-router levererad av TL).<br>
 			MAC-adressen representeras genom 6 par av hexadecimala siffror konkatenerade med kolon ':'. Den skall uteslutande vara i uppercase.<br>
 			MAC-adressen är alltid exakt 17 tecken lång.<br>
 			Exempel: "01:23:45:67:89:AB".
@@ -90,7 +90,3 @@ Exempelimplementation i Java:
 Ev. URL-encoding av query-paramterar skall *inte* påverka `hash`; värdet skall alltid genereras från de avkodade värderna. D.v.s. samma värde på hashen skall genereas oavsett om `mac` skickas som `mac=01:23:45:67:89:AB` eller som `mac=01%3A23%3A45%3A67%3A89%3AAB` i URL:en.
 
 Notera att hostnamn och path inte är del av hashen, detta för att underlätta att TL-portalen kan finnas på flera nät och bakom diverse HTTP proxies etc.
-
-
-
-
