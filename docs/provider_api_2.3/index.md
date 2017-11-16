@@ -2,7 +2,7 @@
 
 Leverantörsoberoende öppet API för effektivt systemsamarbete mellan tjänsteleverantörer (TL eller SP), öppna nät (ÖN) och kommunikationsoperatörer (KO eller CO).
 
-API exponerar de accesser som ställs till förfogande för tjänsteleverantörer att leverera sina transmissionsprodukter på. På de accesser som exponeras kan sedan transmissionsprodukter beställas, avbeställas och konsolideras.
+API exponerar de accesser som ställs till förfogande för tjänsteleverantörer att leverera sina tjänster på. På de accesser som exponeras kan sedan transmissionsprodukter beställas, avbeställas och konsolideras.
 
 Innehåller operationer med följande syften:
 * Hämta säljdata/univers från KO.
